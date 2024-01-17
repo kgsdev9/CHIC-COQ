@@ -26,7 +26,7 @@ class HomeController extends Controller
 
         return view('welcome');
     }
-
+  
 
     public function detail_articles($id) {
         $detail = Article::find($id);

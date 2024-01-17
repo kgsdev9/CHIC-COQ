@@ -41,7 +41,6 @@ Auth::routes();
 //routes sans middleware
 Route::get('/produits', Storecomponent::class)->name('sotre.index');
 Route::get('/categories', CategoryComponent::class)->name('category.index');
-Route::get('/', Welcome::class)->name('home');
 Route::get('/cart', CartComponent::class)->name('cart.index');
 Route::get('/product/detail/{id}', ProductDetail::class)->name('product.detail');
 Route::get('/category/product/{slug}', CategoryProductComponent::class)->name('category.product');
@@ -51,7 +50,7 @@ Route::get('/presentation', function(){
     return view('actualy');
 });
 
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::middleware(['auth'])->group(function() {

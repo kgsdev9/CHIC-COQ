@@ -11,7 +11,6 @@ class CartComponent extends Component
 
     public function mount(){
 
-
         $title="Salut Madame,monsieur du Site poulet de pouletstore.com J'aimerais commander  les produits suivants :  ";
 
         $commande ="";
@@ -19,8 +18,6 @@ class CartComponent extends Component
 
             $commande = $commande.' '."Nom produit : ".$details['name']. " %20 Quantité : ".$details['quantity'].
             " : Montant : ".$details['price'] * $details['quantity']. "  FCFA  "."%20"."%20";
-
-
         }
 
         $this->mycart = $title.' '.$commande;
@@ -78,6 +75,6 @@ class CartComponent extends Component
 
     public function render()
     {
-        return view('livewire.cart-component')->extends('layout.app')->section('content');;
+        return view('livewire.cart-component')->extends('master.master')->section('master');
     }
 }
